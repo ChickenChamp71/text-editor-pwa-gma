@@ -1,0 +1,26 @@
+{
+  "name": "text-editor-pwa-gma",
+  "version": "1.0.0",
+  "description": "AS A developer I WANT to create notes or code snippets with or without an internet connection SO THAT I can reliably retrieve them for later use",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client": "cd client && npm start"
+  },
+  "author": "ChickenChamp71",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^9.1.2",
+    "concurrently": "^5.2.0",
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3"
+  }
+}
